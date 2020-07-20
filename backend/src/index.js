@@ -1,11 +1,13 @@
+require('dotenv').config();
 const express = require('express');
 const routes = require('./routes');
-require('dotenv').config()
 
 const app = express();
+const lastmiddleware = require('./middlewares/LastMiddleware');
 
 app.use(express.json());
-app.use(routes)
+app.use(routes);
 
 
+app.use(lastmiddleware);
 module.exports = app;

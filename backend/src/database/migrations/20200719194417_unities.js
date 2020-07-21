@@ -3,7 +3,7 @@ exports.up = async function(knex) {
   return await knex.schema.createTable('unidades', (table) =>{
 
     table.increments('id_unidade');
-    table.string('municipio',50).unique().notNullable();
+    // table.string('municipio',50).unique().notNullable();
     table.integer('inscricao_mte').unique().notNullable();
     table.string('nome_unidade',100).unique().notNullable();
     table.string('sec_pasta',100).unique().notNullable();
